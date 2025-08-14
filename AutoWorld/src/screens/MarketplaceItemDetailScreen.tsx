@@ -3,17 +3,19 @@ import { View, Text, StyleSheet } from 'react-native';
 import Header from '../components/common/Header';
 import { COLORS } from '../constants';
 
-const EventsScreen: React.FC = () => {
+const MarketplaceItemDetailScreen: React.FC = () => {
   return (
     <View style={styles.container}>
       <Header
-        title="Evenimente"
-        subtitle="Descoperă evenimente auto în apropierea ta"
+        title="Detalii Produs"
+        subtitle="Informații despre produs"
         backgroundColor={COLORS.background}
         textColor={COLORS.text}
+        showBackButton
+        onBackPress={() => {}}
       />
       <View style={styles.content}>
-        <Text style={styles.text}>Ecranul pentru evenimente va fi implementat aici</Text>
+        <Text style={styles.text}>Ecranul pentru detalii produs va fi implementat aici</Text>
       </View>
     </View>
   );
@@ -36,4 +38,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default EventsScreen;
+export default MarketplaceItemDetailScreen;
