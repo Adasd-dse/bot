@@ -25,6 +25,7 @@ import ArticleDetailScreen from '../screens/ArticleDetailScreen';
 import ClubDetailScreen from '../screens/ClubDetailScreen';
 import ChatScreen from '../screens/ChatScreen';
 import HelpRequestDetailScreen from '../screens/HelpRequestDetailScreen';
+import IntelligentWallpaperScreen from '../screens/IntelligentWallpaperScreen';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -109,6 +110,7 @@ const ProfileStack = () => (
     <Stack.Screen name="Clubs" component={ClubsScreen} />
     <Stack.Screen name="ClubDetail" component={ClubDetailScreen} />
     <Stack.Screen name="ArticleDetail" component={ArticleDetailScreen} />
+    <Stack.Screen name="IntelligentWallpaper" component={IntelligentWallpaperScreen} />
   </Stack.Navigator>
 );
 
