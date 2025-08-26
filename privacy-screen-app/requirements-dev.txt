@@ -1,0 +1,31 @@
+# Include main requirements
+-r requirements.txt
+
+# Development tools
+pre-commit>=3.3.0
+jupyter>=1.0.0
+ipython>=8.0.0
+
+# Documentation
+sphinx>=7.0.0
+sphinx-rtd-theme>=1.3.0
+
+# Code quality
+black[jupyter]>=23.0.0
+isort>=5.12.0
+flake8-docstrings>=1.7.0
+pylint>=2.17.0
+
+# Testing & Coverage
+pytest-mock>=3.10.0
+pytest-xdist>=3.3.0
+coverage>=7.2.0
+pytest-html>=3.2.0
+
+# Performance profiling
+memory-profiler>=0.61.0
+line-profiler>=4.1.0
+
+# Security
+bandit>=1.7.0
+safety>=2.3.0
