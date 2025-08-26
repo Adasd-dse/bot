@@ -1,0 +1,188 @@
+# Privacy Screen App Configuration
+# SafeView - Privacy Protection Settings
+
+# Protection Settings
+protection:
+  # Protection mode: blur, pixelate, overlay, brightness, stealth
+  mode: "blur"
+  
+  # Sensitivity level (0.0 to 1.0)
+  # Higher values = more sensitive detection
+  sensitivity: 0.8
+  
+  # Reaction time in milliseconds
+  # Lower values = faster response
+  reaction_time: 200
+  
+  # Blur intensity (1-20)
+  blur_intensity: 15
+  
+  # Pixelation block size (5-50)
+  pixel_block_size: 20
+  
+  # Brightness reduction (0.1-0.9)
+  brightness_reduction: 0.7
+  
+  # Overlay opacity (0.1-1.0)
+  overlay_opacity: 0.8
+
+# Camera Settings
+camera:
+  # Camera device index (0 for default)
+  device_index: 0
+  
+  # Resolution: 480p, 720p, 1080p
+  resolution: "720p"
+  
+  # Frames per second
+  fps: 30
+  
+  # Flip camera horizontally (for selfie view)
+  flip_horizontal: true
+  
+  # Auto-focus enabled
+  auto_focus: true
+
+# Face Detection Settings
+face_detection:
+  # Detection confidence threshold (0.0-1.0)
+  confidence_threshold: 0.7
+  
+  # Face tracking enabled
+  tracking_enabled: true
+  
+  # Maximum number of faces to detect
+  max_faces: 5
+  
+  # Face recognition model: "hog" (CPU) or "cnn" (GPU)
+  model: "hog"
+  
+  # Face recognition tolerance (0.0-1.0)
+  recognition_tolerance: 0.6
+
+# Gaze Detection Settings
+gaze_detection:
+  # Gaze tracking enabled
+  enabled: true
+  
+  # Eye tracking precision (0.0-1.0)
+  precision: 0.8
+  
+  # Gaze direction tolerance (degrees)
+  tolerance_degrees: 15
+  
+  # Calibration points for gaze mapping
+  calibration_points: 9
+
+# Performance Settings
+performance:
+  # Maximum CPU usage (0.0-1.0)
+  max_cpu_usage: 0.3
+  
+  # Battery optimization enabled
+  battery_optimization: true
+  
+  # Power saving mode
+  power_saving: false
+  
+  # Memory limit in MB
+  memory_limit: 100
+  
+  # GPU acceleration enabled
+  gpu_acceleration: true
+
+# Security Settings
+security:
+  # Stealth mode (invisible operation)
+  stealth_mode: false
+  
+  # Local processing only
+  local_processing: true
+  
+  # Encrypt stored data
+  encrypt_data: true
+  
+  # Auto-lock on inactivity (seconds)
+  auto_lock_timeout: 300
+  
+  # Require authentication
+  require_auth: false
+
+# UI Settings
+ui:
+  # Theme: light, dark, auto
+  theme: "auto"
+  
+  # Language: en, ro, auto
+  language: "auto"
+  
+  # Show status indicator
+  show_status: true
+  
+  # Minimize to system tray
+  minimize_to_tray: true
+  
+  # Start with system boot
+  start_with_boot: false
+  
+  # Show notifications
+  show_notifications: true
+
+# Logging Settings
+logging:
+  # Log level: DEBUG, INFO, WARNING, ERROR
+  level: "INFO"
+  
+  # Log to file
+  log_to_file: true
+  
+  # Log file path
+  log_file: "logs/privacy_screen.log"
+  
+  # Max log file size (MB)
+  max_log_size: 10
+  
+  # Log rotation enabled
+  log_rotation: true
+
+# Platform-specific Settings
+platform:
+  android:
+    # Use camera2 API
+    camera2_api: true
+    
+    # Request camera permissions
+    request_permissions: true
+    
+    # Background processing
+    background_processing: false
+  
+  ios:
+    # Use AVFoundation
+    use_avfoundation: true
+    
+    # Face ID integration
+    face_id_integration: true
+    
+    # Background app refresh
+    background_refresh: false
+  
+  windows:
+    # Use DirectShow
+    use_directshow: true
+    
+    # High DPI support
+    high_dpi_support: true
+    
+    # Windows security features
+    security_features: true
+  
+  macos:
+    # Use AVFoundation
+    use_avfoundation: true
+    
+    # Camera permissions
+    camera_permissions: true
+    
+    # App sandboxing
+    app_sandboxing: true
