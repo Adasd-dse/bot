@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1a1a2e">
+    <meta name="description" content="Wallpaper inteligent care se adaptează automat">
+    <title>Smart Wallpaper - Wallpaper Inteligent</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Preview Section -->
+        <section class="preview-section">
+            <canvas id="wallpaperCanvas" width="1080" height="1920"></canvas>
+            <div class="preview-overlay">
+                <div class="time-display" id="timeDisplay">12:00</div>
+                <div class="date-display" id="dateDisplay">Luni, 1 Ianuarie</div>
+                <div class="weather-display" id="weatherDisplay">
+                    <i class="fas fa-sun"></i>
+                    <span>22°C</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Controls Section -->
+        <section class="controls-section">
+            <h1 class="app-title">
+                <i class="fas fa-palette"></i>
+                Smart Wallpaper
+            </h1>
+            
+            <!-- Mode Selection -->
+            <div class="control-group">
+                <h3>Mod Wallpaper</h3>
+                <div class="mode-buttons">
+                    <button class="mode-btn active" data-mode="time">
+                        <i class="fas fa-clock"></i>
+                        <span>Bazat pe Timp</span>
+                    </button>
+                    <button class="mode-btn" data-mode="weather">
+                        <i class="fas fa-cloud-sun"></i>
+                        <span>Bazat pe Vreme</span>
+                    </button>
+                    <button class="mode-btn" data-mode="mood">
+                        <i class="fas fa-smile"></i>
+                        <span>Dispoziție</span>
+                    </button>
+                    <button class="mode-btn" data-mode="abstract">
+                        <i class="fas fa-shapes"></i>
+                        <span>Abstract</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Color Scheme -->
+            <div class="control-group">
+                <h3>Schemă de Culori</h3>
+                <div class="color-schemes">
+                    <div class="color-scheme active" data-scheme="ocean">
+                        <div class="color-preview" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)"></div>
+                        <span>Ocean</span>
+                    </div>
+                    <div class="color-scheme" data-scheme="sunset">
+                        <div class="color-preview" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"></div>
+                        <span>Apus</span>
+                    </div>
+                    <div class="color-scheme" data-scheme="forest">
+                        <div class="color-preview" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)"></div>
+                        <span>Pădure</span>
+                    </div>
+                    <div class="color-scheme" data-scheme="night">
+                        <div class="color-preview" style="background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)"></div>
+                        <span>Noapte</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings -->
+            <div class="control-group">
+                <h3>Setări</h3>
+                <div class="settings">
+                    <div class="setting-item">
+                        <label for="autoChange">
+                            <input type="checkbox" id="autoChange" checked>
+                            <span>Schimbare automată</span>
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label for="changeInterval">
+                            <span>Interval schimbare:</span>
+                            <select id="changeInterval">
+                                <option value="1">1 oră</option>
+                                <option value="3" selected>3 ore</option>
+                                <option value="6">6 ore</option>
+                                <option value="12">12 ore</option>
+                                <option value="24">24 ore</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label for="showTime">
+                            <input type="checkbox" id="showTime" checked>
+                            <span>Afișează ora</span>
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label for="showWeather">
+                            <input type="checkbox" id="showWeather" checked>
+                            <span>Afișează vremea</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="btn btn-primary" id="downloadBtn">
+                    <i class="fas fa-download"></i>
+                    <span>Descarcă Wallpaper</span>
+                </button>
+                <button class="btn btn-secondary" id="refreshBtn">
+                    <i class="fas fa-sync-alt"></i>
+                    <span>Regenerează</span>
+                </button>
+                <button class="btn btn-install" id="installBtn" style="display: none;">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>Instalează pe Telefon</span>
+                </button>
+            </div>
+
+            <!-- Location Permission -->
+            <div class="location-permission" id="locationPermission" style="display: none;">
+                <p><i class="fas fa-map-marker-alt"></i> Permite accesul la locație pentru date meteo precise</p>
+                <button class="btn btn-small" id="allowLocationBtn">Permite</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
