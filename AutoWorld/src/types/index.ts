@@ -324,3 +324,88 @@ export interface UserSettings {
     showSatellite: boolean;
   };
 }
+
+// Wallpaper Types
+export interface WallpaperData {
+  id: string;
+  uri: string;
+  category: string;
+  tags: string[];
+  timeOfDay?: string;
+  weather?: string;
+  mood?: string;
+  aiScore?: number;
+  downloadUrl?: string;
+  thumbnailUrl?: string;
+  resolution?: string;
+  size?: number;
+  createdAt?: Date;
+}
+
+export interface WallpaperSettings {
+  autoChange: boolean;
+  timeBased: boolean;
+  weatherBased: boolean;
+  locationBased: boolean;
+  moodBased: boolean;
+  aiRecommendations: boolean;
+  changeInterval: number;
+  categories: string[];
+}
+
+export interface WeatherData {
+  temperature: number;
+  condition: string;
+  description: string;
+  humidity: number;
+  windSpeed: number;
+  pressure: number;
+  visibility: number;
+  uvIndex: number;
+  icon: string;
+  location: {
+    city: string;
+    country: string;
+    lat: number;
+    lon: number;
+  };
+  sunrise: Date;
+  sunset: Date;
+  lastUpdated: Date;
+}
+
+export interface AIRecommendation {
+  wallpaper: WallpaperData;
+  confidence: number;
+  reasons: string[];
+  score: number;
+  factors: {
+    timeOfDay: number;
+    weather: number;
+    userHistory: number;
+    category: number;
+    mood: number;
+    novelty: number;
+  };
+}
+
+export type RootStackParamList = {
+  Home: undefined;
+  Communities: undefined;
+  Map: undefined;
+  Marketplace: undefined;
+  Events: undefined;
+  Profile: undefined;
+  IntelligentWallpaper: undefined;
+  Messenger: undefined;
+  Chat: undefined;
+  AutoHelp: undefined;
+  Blog: undefined;
+  Clubs: undefined;
+  ClubDetail: { clubId: string };
+  ArticleDetail: { articleId: string };
+  CommunityDetail: { communityId: string };
+  EventDetail: { eventId: string };
+  MarketplaceItemDetail: { itemId: string };
+  HelpRequestDetail: { requestId: string };
+};

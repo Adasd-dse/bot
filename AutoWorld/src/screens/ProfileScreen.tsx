@@ -281,6 +281,13 @@ const ProfileScreen: React.FC = () => {
             'Descoperă organizații auto',
             () => navigation.navigate('Clubs' as never)
           )}
+          
+          {renderMenuItem(
+            'image-outline',
+            'Wallpaper Inteligent',
+            'Schimbă wallpaper-ul automat',
+            () => navigation.navigate('IntelligentWallpaper' as never)
+          )}
         </Card>
 
         {/* Mașinile mele */}
